@@ -5,12 +5,15 @@
 html {
   height: 100%;
 }
-
+* {
+  list-style: none;
+}
 body {
   margin: 1rem;
   min-height: 100%;
-  background-image: './images/burning-dollar.jpg';
-  background-repeat: repeat;
+  background-color: burlywood;
+  // background-image: url('/images/burning-dollar.jpg');
+  // background-repeat: repeat;
 }
 
 header {
@@ -20,4 +23,11 @@ header {
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
