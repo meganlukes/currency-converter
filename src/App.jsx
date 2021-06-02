@@ -20,7 +20,7 @@ export function App() {
       </header>
       <main>
         <form>
-          <input type="text" placeholder="0.00" />
+          <input type="text" placeholder="$0.00" />
         </form>
         <button>Show me the rates!</button>
         <ul>
