@@ -14,10 +14,13 @@ export function App() {
     const response = await axios.get(
       `http://api.exchangeratesapi.io/v1/latest?access_key=16062e9a939a637ca354f4db04a8d352`
     )
-    console.log(response)
-    console.log('hello')
-    setCurrencyResults(response.data)
+    if (response.status === 200) {
+      console.log(response.data)
+      setCurrencyResults(response.data)
+    }
+    console.log('useEffect')
   }, [])
+
   return (
     <body>
       <header>
