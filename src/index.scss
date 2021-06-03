@@ -1,5 +1,5 @@
 :root {
-  font: 16px / 1 sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html {
@@ -11,9 +11,8 @@ html {
 body {
   margin: 1rem;
   min-height: 100%;
-  background-color: burlywood;
-  // background-image: url('/images/burning-dollar.jpg');
-  // background-repeat: repeat;
+
+  background-image: url('/images/Currency.jpg');
 }
 
 header {
@@ -23,11 +22,33 @@ header {
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   text-align: center;
+  color: rgb(59, 51, 51);
 }
 ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
+  color: black;
+  font-size: x-large;
+  color: rgb(59, 51, 51);
+  padding: 0%;
+  margin: 0%;
+}
+ol {
+  background-color: rgb(66, 139, 66);
+  padding-left: 5%;
+  width: min-content;
+}
+button {
+  font-size: 1rem;
+}
+input {
+  font-size: 1.5rem;
+  width: 12rem;
+}
+b {
+  font-size: 5rem;
+  background-color: rgb(66, 139, 66);
+  border-radius: 0.5rem;
 }

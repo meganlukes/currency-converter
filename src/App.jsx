@@ -6,29 +6,48 @@ export function App() {
   const [currencyResults, setCurrencyResults] = useState({ rates: [] })
   const [amount, setAmount] = useState(1)
 
+  function updateAmount(event) {
+    setAmount(event.target.value)
+  }
+
   useEffect(async () => {
     const response = await axios.get(
-      `https://api.exchangeratesapi.io/v1/latest`
+      `http://api.exchangeratesapi.io/v1/latest?access_key=16062e9a939a637ca354f4db04a8d352`
     )
-    console.log('yes')
+    console.log(response)
+    console.log('hello')
     setCurrencyResults(response.data)
   }, [])
   return (
     <body>
       <header>
-        <h1>Currency calculator</h1>
+        <h1>How Badly Has My Currency Devalued?</h1>
       </header>
       <main>
-        <form>
-          <input type="text" placeholder="$0.00" />
-        </form>
-        <button>Show me the rates!</button>
         <ul>
-          <li>$inputted number</li>
           <li>
-            <img src={equals} height="50" alt="eqals sign" />
+            <form>
+              <b>$</b>
+              <input type="text" onChange={updateAmount} placeholder="1.00" />
+            </form>
           </li>
-          <li>rates</li>
+          <li>
+            <b>=</b>
+          </li>
+          <li>
+            <ol>
+              {Object.entries(currencyResults.rates).map(
+                ([countryCode, exchangeRate]) => {
+                  return (
+                    <li className="value" key={countryCode}>
+                      {countryCode}{' '}
+                      {(exchangeRate * (amount / 1.22)).toFixed(2)}
+                    </li>
+                  )
+                }
+              )}
+            </ol>
+          </li>
         </ul>
       </main>
     </body>
